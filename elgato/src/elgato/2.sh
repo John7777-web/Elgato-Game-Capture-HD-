@@ -3,7 +3,12 @@ git clone https://github.com/tolga9009/elgato-gchd
 
 cd /home/$USER/elgato-gchd
 
+FILE=gchdm_203_970.dmg
+if [ -f "$FILE" ]; then
+    echo "$FILE exist"
+else 
 wget http://files.elgato.com/gamecapture/gchdm_203_970.dmg
+fi
 
 dmg2img gchdm_203_970.dmg -o gchdm_203_970.dmg.img
 
